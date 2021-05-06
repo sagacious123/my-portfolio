@@ -61,4 +61,4 @@ function toggleNav() {
         this.classList.toggle("change");
     };
 }
-//FUNCTIONS
+
