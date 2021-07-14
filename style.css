@@ -375,6 +375,12 @@ a {
 }
 .about-content {
     max-width: 50%;
+    color: rgb(41, 41, 41);
+    /* background-color: rgba(202, 223, 255, 0.521); */
+    background: linear-gradient(30deg, rgb(233, 220, 255), transparent);
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(143, 143, 143, 0.397);
 }
 .about-section p {
     line-height: 30px;
@@ -418,6 +424,113 @@ a {
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.12 );
 }
+.overlay {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  text-align: left;
+  background: #080b52c2;
+  backdrop-filter: blur( 6.0px );
+  -webkit-backdrop-filter: blur( 6.0px );
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: 8;
+  transition: all .3s;
+}
+.overlay-container {
+  position: absolute;
+  bottom: 2rem;
+  width: 80%;
+  transition: .3s .2s;
+  perspective: 200;
+}
+.overlay h2 {
+  color: rgb(228, 228, 228) !important;
+  margin-bottom: 4rem;
+  opacity: 0;
+  padding: 0 0 .6rem 0;
+  position: absolute;
+  font-weight: 900;
+  /* width: 70%; */
+  left: 33.6%;
+  bottom: -39px;
+}
+.overlay h2::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 300%;
+  transform: translateX(-50%);
+  bottom: 0;
+  background-color: #e01d88;
+}
+.card:hover .overlay h2::after {
+  animation: slideIn .8s .8s forwards;
+}
+.overlay h4 {
+  color: #923dfa;
+  font-size: 1rem;
+  opacity: 0;
+}
+.overlay-container div {
+  /* color: rgb(201, 201, 201); */
+  font-size: .7rem;
+  font-weight: 300;
+  opacity: 0;
+}
+.badge {
+  background: linear-gradient(40deg, #0f0033,  #510ba7);
+  border: 1px solid  #510ba7;
+  color: #e0e0e0;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 4px;
+  display: inline-block;
+  /* margin-top: 12px; */
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.63);
+}
+.badge2 {
+  margin-top: 10px;
+}
+.card:hover .overlay {
+  opacity: 1;
+}
+.card:hover .overlay h2 {
+  animation: showTitle 1.6s forwards;
+  left: 0%;
+  /* bottom: 60px; */
+}
+.card:hover .overlay h4 {
+  animation: showBanner 1s .2s forwards;
+}
+.card:hover .overlay-container div {
+  animation: showBanner 1s .4s forwards;
+}
+.card:hover .card-title {
+  opacity: 0;
+}
+@keyframes showTitle {
+  0% {
+      bottom: -38px;
+  }
+  100% {
+      bottom: 90px;
+      opacity: 1;
+  }
+}
+@keyframes slideIn {
+  0% {
+      left: 300%;
+  }
+  100% {
+      left: 70%;
+  }
+}
 .card:hover {
     box-shadow: 1px 10px 16px rgba(26, 26, 26, 0.171);
     transform: scale(1.01);
@@ -427,6 +540,7 @@ a {
     color: white;
     font-size: 1.3rem;
     margin-top: 2rem;
+    transition: .3s;
 }
 .img-group {
     width: 350px;
@@ -660,7 +774,7 @@ hr.style-one {
     }
     .change .bar1 {
         -webkit-transform: translate(-1px, 6px) rotate(45deg);
-        transform: translate(-1px, 6px) rotate(45deg);
+        transform: translate(-1px, 6px) rotate(135deg);
         background-color: white;
     }
     .change .bar2 {
@@ -668,7 +782,7 @@ hr.style-one {
     }
     .change .bar3 {
         -webkit-transform: translate(-1px, -7px) rotate(-45deg);
-        transform: translate(-1px, -7px) rotate(-45deg);
+        transform: translate(-1px, -7px) rotate(225deg);
         background-color: white;
     }
     .hero::before {
@@ -814,6 +928,9 @@ hr.style-one {
         font-size: 1.2rem;
         padding-top: 0px;
         width: 100%;
+    }
+    .badge3 {
+      margin-top: 10px;
     }
 }
 @media (min-width: 868px) {
