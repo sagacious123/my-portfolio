@@ -6,7 +6,7 @@ const navItems = document.querySelector(".nav-items");
 window.onload = () => {
     setTimeout(() => {
         document.querySelector("body").classList.add("display")
-    }, 300);
+    }, 3000);
 }
 
 navToggler.addEventListener("click", toggleNav())
