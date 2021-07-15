@@ -184,7 +184,7 @@ a {
     transition: .4s ease;
 }
 .hero {
-    background: linear-gradient(to bottom, rgb(49 5 26 / 78%), rgb(8 11 84 / 68%)), url(images/blue-bg.jpg) no-repeat;
+    background: linear-gradient(to bottom, rgb(49 5 26 / 78%), rgb(8 11 84 / 68%)), url(images/blue-bg2.jpg) no-repeat;
     /* background: linear-gradient(to bottom, #7a19f12b, #33217940), url(images/bg-pink2.jpg) no-repeat ; */
     background-size: cover;
     position: relative;
@@ -343,6 +343,32 @@ a {
 .navitems-scroll {
     top: 3.5rem !important;
 }
+.next {
+  background-color: transparent;
+  border: 1px solid #080a52;
+  padding: 10px 11px;
+  font-size: .8rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 9;
+  top: -14px;
+  left: 50%;
+  color: #080a52;
+  box-shadow: 1px 1px 5px rgba(75, 75, 75, 0.329);
+  animation: infinity 2s infinite;
+}
+@keyframes infinity {
+  0% {
+      transform: translateY(0px) translateX(-50%);
+  }
+  50% {
+      transform: translateY(6px) translateX(-50%);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(0px) translateX(-50%);
+  }
+}
 .about-section, .portfolio-section {
     position: relative;
     z-index: 9;
@@ -378,7 +404,7 @@ a {
     color: rgb(41, 41, 41);
     /* background-color: rgba(202, 223, 255, 0.521); */
     background: linear-gradient(30deg, rgb(233, 220, 255), transparent);
-    padding: 1.2rem;
+    padding: 2.4rem 1.2rem 1.6rem;
     border-radius: 10px;
     box-shadow: 0px 6px 10px rgba(143, 143, 143, 0.397);
 }
@@ -528,7 +554,7 @@ a {
       left: 300%;
   }
   100% {
-      left: 70%;
+      left: 66%;
   }
 }
 .card:hover {
@@ -724,8 +750,16 @@ hr.style-one {
         padding: 0;
     }
     .nav-items ul {
-        display: none;
+        /* display: none; */
+        float: left;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
+    .nav-items li {
+      padding: 1rem;
+  }
     .nav-items a::before {
         content: none;
     }
@@ -741,17 +775,28 @@ hr.style-one {
     .about-img {
         float: none;
     }
-    .responsive .nav-items {
-        text-align: left;
+    .nav-items {
+      text-align: left;
         background: linear-gradient(49deg, #080a52, #e01d88 1100px);
         /* background: linear-gradient(261deg, #080a52, #e01d88 1100px); */
         width: 100%;
         position: absolute;
-        left: 0;
-        top: 4.5rem;
+        top: 4.9rem;
         z-index: -1;
         padding: 0 0 .4rem 2rem;
         transition: .4s linear;
+        left: -100%;
+    }
+    .responsive .nav-items {
+        /* text-align: left;
+        background: linear-gradient(49deg, #080a52, #e01d88 1100px);
+        width: 100%;
+        position: absolute;
+        top: 4.9rem;
+        z-index: -1;
+        padding: 0 0 .4rem 2rem;
+        transition: .4s linear; */
+        left: 0;
     }
     .nav-toggler {
         display: block !important;
@@ -768,6 +813,7 @@ hr.style-one {
     .bar1, .bar2, .bar3 {
         height: .12rem;
         width: 1.6rem;
+        border-radius: 20%;
         background-color: white;
         margin: .3rem;
         transition: ease .4s;
@@ -793,6 +839,7 @@ hr.style-one {
     }
     .responsive  {
         width: 100%;
+        background-color: #080a52;
         position: fixed;
         right: 0;
         flex-direction: column;
@@ -800,16 +847,16 @@ hr.style-one {
         box-shadow: 0 1px 9px rgb(71, 71, 71);
         z-index: 99;
     }
-    .responsive .nav-items ul {
+    /* .responsive .nav-items ul {
         float: left;
         margin: auto;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-    }
-    .responsive .nav-items li {
+    } */
+    /* .responsive .nav-items li {
         padding: 1rem;
-    }
+    } */
 }
 @media (max-width:900px) {
     .port-card {
@@ -892,7 +939,7 @@ hr.style-one {
         padding-bottom: 8rem;
     }
     .container-flex span {
-        font-size: 1.3rem;
+        font-size: 1.26rem;
     }
     .container-flex .btn {
         padding: .8rem 1.2rem;
@@ -931,6 +978,9 @@ hr.style-one {
     }
     .badge3 {
       margin-top: 10px;
+    }
+    .next {
+      top: 6px;
     }
 }
 @media (min-width: 868px) {
