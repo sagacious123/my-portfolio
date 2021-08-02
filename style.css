@@ -32,6 +32,7 @@ font-family: 'Mulish', sans-serif; */
 ::-webkit-scrollbar-track-piece {
     background-color: #ffeffe;
 }
+
 .loader {
     width: 48px;
     height: 48px;
@@ -247,7 +248,7 @@ a {
     z-index: 2;
     perspective: 300px;
 }
-.container-flex div {
+.container-flex .hero-group {
     margin: auto;
     align-items: center;
     justify-content: center;
@@ -255,13 +256,23 @@ a {
     
     
 }
+.container-flex h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 300;
+  animation: showBanner 1s forwards;
+}
+.typewrite {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
 .container-flex h2 {
     font-family: 'Josefin Slab', serif;
     font-size: 16px;
     margin-bottom: 0;
     font-weight: 900;
     opacity: 0;
-    animation: showBanner 1s forwards;
+    animation: showBanner 1s .2s forwards;
 }
 .container-flex h3 {
     font-family: 'Josefin Slab', serif;
@@ -270,13 +281,55 @@ a {
     margin-bottom: 0;
     font-weight: 900;
     opacity: 0;
-    animation: showBanner 1s .2s forwards;
+    animation: showBanner 1s .4s forwards;
 }
-.container-flex span {
+.container-flex .role {
     font-family: 'Baloo Da 2', cursive;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 1.9rem;
+}
+.wrap {
+  position: relative;
+  padding-right: .5rem;
+}
+.wrap::after {
+    content: "|";
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    top: 0;
+    animation: caret infinite;
+    animation-duration: 1s;
+    animation-timing-function: steps(1, end);
+}
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.wave {
+  font-size: 2rem;
+  animation-name: wave-animation; 
+  animation-duration: 2.5s; 
+  animation-iteration-count: infinite;  
+  transform-origin: 70% 70%;  
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(18.0deg) } 
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(18.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(14.0deg) }
+   60% { transform: rotate( 0.0deg) } 
+  100% { transform: rotate( 0.0deg) }
 }
 .btn {
     font-family: 'Mulish', sans-serif;
@@ -286,7 +339,7 @@ a {
     color: white;
     background: rgb(255, 67, 99);
     opacity: 0;
-    animation: showBanner 1s .4s forwards;
+    animation: showBanner 1s .6s forwards;
     border-radius: 4px;
     margin-top: .6rem;
     font-weight: 500;
@@ -419,6 +472,25 @@ a {
 .about-section span {
     font-size: 3rem;
     font-weight: 600;
+}
+.resume-btn {
+  font-family: 'Mulish', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-size: 15px;
+    border: none;
+    color: white;
+    background: rgb(255, 67, 99);
+    border-radius: 4px;
+    margin-top: .6rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    padding: .8rem 1.6rem;
+    cursor: pointer;
+    z-index: 6;
+    outline: none;
+    overflow: hidden;
+    box-shadow: 3px 3px 9px rgba(37, 37, 37, 0.199);
+    position: relative;
 }
 .portfolio-section { 
     padding-top: 3rem; 
@@ -908,6 +980,9 @@ hr.style-one {
     .container-flex {
         padding-bottom: 10rem;
     }
+    .container-flex .role {
+      font-size: 1.6rem;
+  }
 }
 @media (max-width: 400px) {
     .hero::after {
@@ -923,8 +998,14 @@ hr.style-one {
         /* padding-top: 6rem; */
         padding-bottom: 8rem;
     }
-    .container-flex span {
+    .container-flex h1 {
+      font-size: 1rem;
+    }
+    .container-flex .role {
         font-size: 1.26rem;
+    }
+    .wave {
+      font-size: 1.4rem;
     }
     .container-flex .btn {
         padding: .8rem 1.2rem;
