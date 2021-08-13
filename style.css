@@ -291,7 +291,7 @@ a {
 }
 .wrap {
   position: relative;
-  padding-right: .5rem;
+  padding-right: .4rem;
 }
 .wrap::after {
     content: "|";
@@ -474,23 +474,44 @@ a {
     font-weight: 600;
 }
 .resume-btn {
-  font-family: 'Mulish', sans-serif;
-    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Mulish', sans-serif;
     font-size: 15px;
     border: none;
     color: white;
     background: rgb(255, 67, 99);
     border-radius: 4px;
-    margin-top: .6rem;
+    /* margin-top: 2rem; */
     font-weight: 500;
     letter-spacing: .5px;
-    padding: .8rem 1.6rem;
+    padding: .6rem 1rem;
     cursor: pointer;
+    display: block;
+    width: 190px;
+    text-align: center;
+    margin: auto;
     z-index: 6;
     outline: none;
     overflow: hidden;
     box-shadow: 3px 3px 9px rgba(37, 37, 37, 0.199);
     position: relative;
+    top: 4rem;
+}
+.resume-btn:hover {
+  box-shadow: 0px 0px 8px  rgb(255, 67, 99);
+}
+.resume-btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(-120deg, transparent, rgb(255, 162, 178), transparent);
+  transform: translateX(-100%);
+  top: 0;
+  left: 0;
+  transition: .3s linear;
+}
+.resume-btn:hover::before {
+  transform: translateX(100%);
 }
 .portfolio-section { 
     padding-top: 3rem; 
@@ -810,7 +831,7 @@ hr.style-one {
         margin-bottom: 2rem;
     }
     .hero::after {
-        bottom: -500px;
+        bottom: -508px;
     }
     .hero-inner::after {
         bottom: -410px;
@@ -948,13 +969,13 @@ hr.style-one {
 }
 @media (max-width:700px) {
     .hero::after {
-        bottom: -540px;
+        bottom: -555px;
     }
     .hero-inner::after {
-        bottom: -470px;
+        bottom: -490px;
     }
     .hero-inner2::before {
-        bottom: -430px;
+        bottom: -447px;
     }
     .about-section h3, .portfolio-section h3, .foot h2 {
         font-size: 1.6rem;
@@ -962,10 +983,10 @@ hr.style-one {
 }
 @media (max-width:458px) {
     .hero-inner2::before {
-        bottom: -438px;
+        bottom: -460px;
     }
     .hero-inner::after {
-        bottom: -480px;
+        bottom: -503px;
     }
     .about-img {
         width: 117%;
@@ -986,13 +1007,13 @@ hr.style-one {
 }
 @media (max-width: 400px) {
     .hero::after {
-        bottom: -479px;
+        bottom: -500px;
     }
     .hero-inner::after {
-        bottom: -426px;
+        bottom: -450px;
     }
     .hero-inner2::before {
-        bottom: -400px;
+        bottom: -409px;
     }
     .container-flex {
         /* padding-top: 6rem; */
@@ -1017,14 +1038,14 @@ hr.style-one {
         margin-top: 0;
     }
     .img-group::after, .img-webpage, .macload-wrapper {
-        height: 72% !important;
+        height: 66% !important;
     }
     .img-group::after {
         top: 8% !important;
         transform: rotateX(-80deg) translateY(-5px);
     }
     .macbook-img-1 {
-        height: 158px !important;
+        height: 146px !important;
         top: 2px;
     }
     .mac-load {
@@ -1035,7 +1056,7 @@ hr.style-one {
     }
     .progress-bar {
         width: 4.2rem !important;
-        height: .12rem !important;
+        height: .08rem !important;
     }
     .nav-brand {
         font-size: 1.2rem;
