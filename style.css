@@ -585,7 +585,7 @@ a {
   z-index: 44;
   bottom: -122px;
   padding-bottom: 12rem;
-  background: linear-gradient(to right, #0b0046c0, #09003aad), url(images/FluidGradientBackground.jpg);
+  background: linear-gradient(to right, #0b0046bb, #09003aa9), url(images/FluidGradientBackground.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
