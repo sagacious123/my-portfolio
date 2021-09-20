@@ -84,11 +84,11 @@ font-family: 'Mulish', sans-serif; */
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
   font-family: "Ubuntu", sans-serif;
-  overflow-x: hidden;
 }
 .container {
   width: 100%;

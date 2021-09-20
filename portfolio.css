@@ -71,16 +71,15 @@ html {
 .container-flex {
   position: relative;
   display: flex;
-  padding-top: 5rem;
-  padding-bottom: 7rem;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
   color: white;
   z-index: 2;
   perspective: 300px;
 }
 .container-flex .hero-group {
   margin: 0;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
 .container-flex h1 {
@@ -89,14 +88,11 @@ html {
   font-weight: 300;
   animation: showBanner 1s forwards;
 }
-.typewrite {
-  color: white;
-  font-family: "Montserrat", sans-serif;
-}
 .container-flex h2 {
   /* font-family: "Josefin Slab", serif; */
   font-family: "Baloo Da 2", cursive;
   font-size: 50px;
+  text-align: center;
   font-weight: 500;
   margin-bottom: 0;
   opacity: 0;
@@ -158,7 +154,7 @@ html {
   /* padding: 1.5rem; */
   max-width: 90%;
   text-align: center;
-  width: 90%;
+  width: 82%;
   height: 290px;
   transition: 0.3s linear;
   position: relative;
@@ -203,7 +199,7 @@ html {
   width: 100%;
   /* position: absolute; */
   top: 0;
-  height: 100%;
+  height: 90%;
   left: 0;
   margin: 0 auto;
   z-index: -2;
@@ -235,20 +231,21 @@ html {
 }
 .overlay h2 {
   color: rgb(228, 228, 228) !important;
+  background: transparent;
   margin-bottom: 4rem;
   opacity: 0;
   padding: 0 0 0.6rem 0;
   position: absolute;
   font-weight: 900;
   /* width: 70%; */
-  left: 33.6%;
+  left: 50%;
   bottom: -39px;
 }
 .overlay h2::after {
   content: "";
   position: absolute;
   height: 2px;
-  width: 100%;
+  width: 80%;
   left: 300%;
   transform: translateX(-50%);
   bottom: 0;
@@ -288,7 +285,7 @@ html {
 }
 .card:hover .overlay h2 {
   animation: showTitle 1.6s forwards;
-  left: 0%;
+  left: 50%;
   /* bottom: 60px; */
 }
 .card:hover .overlay h4 {
@@ -314,7 +311,7 @@ html {
     left: 300%;
   }
   100% {
-    left: 66%;
+    left: 56%;
   }
 }
 /* .img-group {
