@@ -10,63 +10,14 @@ html {
   overflow-x: hidden;
 }
 .hero {
-  background: linear-gradient(to bottom, rgb(49 5 26 / 78%), rgb(8 11 84 / 68%)),
-    url(images/bg-pink2.jpg) no-repeat;
+  background: linear-gradient(to bottom, rgb(49 5 26 / 78%), rgb(8 11 84 / 68%)), url(images/bg-pink2.jpg) no-repeat;
   /* background: linear-gradient(to bottom, rgb(8 11 84 / 100%), rgb(8 11 84 / 100%)); */
   background-size: cover;
-  position: relative;
-  background-attachment: fixed;
+  transition: 4s;
+  position: fixed;
+  width: 100%;
+  /* background-attachment: fixed; */
   overflow: hidden;
-}
-.hero::after {
-  content: " ";
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  margin-right: 0;
-  position: absolute;
-  z-index: 1;
-  transform: rotate(180deg);
-  background-image: url(images/wavesOpacity.svg);
-  background-repeat: no-repeat;
-  height: 25%;
-  width: 160%;
-  opacity: 1;
-}
-.hero-inner::after {
-  content: " ";
-  bottom: -368px;
-  left: 0;
-  right: 0;
-  margin-right: 0;
-  position: absolute;
-  z-index: 1;
-  background-image: url(images/wave7.svg);
-  background-repeat: no-repeat;
-  height: 100%;
-  transform: translateX(-54px);
-  opacity: 0.1;
-}
-.hero-inner2::before {
-  content: " ";
-  bottom: -320px;
-  left: 0;
-  right: 0;
-  margin-right: 0;
-  position: absolute;
-  z-index: 1;
-  background-image: url(images/wave8.svg);
-  background-repeat: no-repeat;
-  height: 100%;
-  opacity: 0.1;
-}
-.hero-inner {
-  padding: 40px 0;
-  background-attachment: fixed;
-}
-.hero-inner,
-.hero-inner2 {
-  position: relative;
 }
 .container-flex {
   position: relative;
@@ -88,10 +39,23 @@ html {
   font-weight: 300;
   animation: showBanner 1s forwards;
 }
+.container-flex h1 {
+  position: fixed;
+  font-size: 6rem;
+  font-weight: 700;
+  text-align: center;
+  left: 17%;
+  /* transform: translateX(-50%); */
+  /* margin: auto; */
+  color: #a54ac917;
+  top: 80px;
+  z-index: 1;
+  letter-spacing: 26px;
+}
 .container-flex h2 {
   /* font-family: "Josefin Slab", serif; */
   font-family: "Baloo Da 2", cursive;
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   font-weight: 500;
   margin-bottom: 0;
@@ -113,15 +77,6 @@ html {
   font-weight: 500;
   font-size: 1.9rem;
 }
-.portfolio h1 {
-  position: absolute;
-  font-size: 6rem;
-  font-weight: 700;
-  color: #a54ac917;
-  top: -160px;
-  z-index: -1;
-  letter-spacing: 26px;
-}
 .portfolio h3 {
   margin-bottom: 4rem;
   font-size: 2.2rem;
@@ -133,16 +88,35 @@ html {
   text-align: center;
 }
 .portfolio {
-  /* padding-top: 3rem; */
   position: relative;
-  z-index: 44;
-  bottom: -122px;
-  padding-bottom: 12rem;
+  z-index: 999;
+  background: white;
+  /* bottom: 0; */
+  top: 260px;
+  padding-bottom: 18rem;
   position: relative;
-  padding-top: 2rem;
-  /* background: linear-gradient(to right, #0b0046bb, #09003aa9), url(images/FluidGradientBackground.jpg);
+  padding-top: 5rem;
+  overflow-x: clip;
+}
+.portfolio::after {
+  content: " ";
+  top: -50px;
+  left: 0;
+  right: 0;
+  margin-right: 0;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(180deg);
+  background-image: url(images/wavesOpacity.svg);
   background-repeat: no-repeat;
-  background-size: cover; */
+  height: 52px;
+  width: 175%;
+  opacity: 1;
+}
+.row2 {
+  width: 900px; 
+  max-width: 100%; 
+  margin: auto;
 }
 .port-card {
   display: grid;
@@ -151,10 +125,11 @@ html {
 .card {
   margin: auto;
   margin-bottom: 3rem;
+  display: block;
   /* padding: 1.5rem; */
   max-width: 90%;
   text-align: center;
-  width: 82%;
+  width: 86%;
   height: 290px;
   transition: 0.3s linear;
   position: relative;
@@ -311,7 +286,7 @@ html {
     left: 300%;
   }
   100% {
-    left: 56%;
+    left: 50%;
   }
 }
 /* .img-group {
@@ -412,4 +387,63 @@ textarea {
   text-align: left;
   line-height: 25px;
   font-weight: 600;
+}
+.foot {
+  z-index: 9996;
+}
+
+@media (max-width: 900px) {
+  .portfolio h1 {
+    display: none;
+  }
+  .card {
+    width: 100%;
+    height: 250px;
+  }
+}
+@media (max-width: 800px) {
+  .details {
+    width: 100%;
+  }
+}
+@media (max-width: 750px) {
+  .port-card {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    width: 68%;
+    height: 270px;
+  }
+  .card h2 {
+    font-size: 1.1rem;
+  }
+  .container-flex {
+    padding-top: 4.5rem;
+    padding-bottom: 4rem;
+  }
+  .container-flex h2 {
+    font-size: 32px;
+  }
+  .portfolio {
+    top: 215px;
+  }
+  .portfolio::after {
+    height: 30px;
+    top: -30px;
+  }
+}
+@media (max-width: 530px) {
+  .card {
+    width: 80%;
+    height: 260px;
+  }
+}
+@media (max-width: 430px) {
+  .card {
+    width: 100%;
+    height: 220px;
+  }
+  .img-webpage {
+    height: 90% !important;
+  }
 }

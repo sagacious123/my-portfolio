@@ -589,6 +589,11 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.row2 {
+  width: 900px; 
+  max-width: 100%; 
+  margin: auto;
+}
 .port-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
