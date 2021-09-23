@@ -595,12 +595,15 @@ a {
   margin: auto;
 }
 .more {
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
   color: white;
   margin-bottom: 5rem;
   font-family: "Josefin Slab", serif;
-  font-weight: 100;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 .more i {
   margin-left: 14px;
