@@ -127,7 +127,7 @@ html {
   margin-bottom: 3rem;
   display: block;
   /* padding: 1.5rem; */
-  max-width: 90%;
+  max-width: 100%;
   text-align: center;
   width: 86%;
   height: 290px;
@@ -136,7 +136,7 @@ html {
   z-index: 1;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 8px 0 rgb(7 12 82 / 29%);
+  box-shadow: 0 3px 6px rgb(7 12 82 / 20%);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-radius: 10px;
@@ -227,7 +227,7 @@ html {
   background-color: #e01d88;
 }
 .card:hover .overlay h2::after {
-  animation: slideIn 0.8s 0.8s forwards;
+  animation: slideIn 1s cubic-bezier(0.31, 0.27, 0.49, 1.28) 0.8s forwards;
 }
 .overlay h4 {
   color: #923dfa;
@@ -245,16 +245,17 @@ html {
   border: 1px solid #510ba7;
   color: #e0e0e0;
   letter-spacing: 1px;
-  padding: 5px 10px;
+  padding: 4px 10px;
   border-radius: 20px;
   margin-right: 4px;
+  margin-bottom: 5px;
   display: inline-block;
   /* margin-top: 12px; */
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.63);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.43);
 }
-.badge2 {
-  margin-top: 10px;
-}
+/* .badge2 {
+  margin-top: 5px;
+} */
 .card:hover .overlay {
   opacity: 1;
 }
@@ -277,7 +278,7 @@ html {
     bottom: -38px;
   }
   100% {
-    bottom: 90px;
+    bottom: 70px;
     opacity: 1;
   }
 }
@@ -397,13 +398,26 @@ textarea {
     display: none;
   }
   .card {
-    width: 100%;
-    height: 250px;
+    width: 90%;
+    height: 240px;
+  }
+  .overlay {
+    padding: 1.3rem;
+  }
+  .overlay-container {
+    bottom: 1rem;
+    width: 90%;
+  }
+  .overlay-container div {
+    font-size: .6rem;
   }
 }
 @media (max-width: 800px) {
   .details {
     width: 100%;
+  }
+  .card h2 {
+    font-size: 1.1rem;
   }
 }
 @media (max-width: 750px) {
@@ -413,9 +427,6 @@ textarea {
   .card {
     width: 68%;
     height: 270px;
-  }
-  .card h2 {
-    font-size: 1.1rem;
   }
   .container-flex {
     padding-top: 4.5rem;
@@ -437,11 +448,18 @@ textarea {
     width: 80%;
     height: 260px;
   }
+  .overlay {
+    padding: 1.3rem;
+  }
+  .overlay-container {
+    bottom: 1rem;
+    width: 90%;
+  }
 }
 @media (max-width: 430px) {
   .card {
-    width: 100%;
-    height: 220px;
+    width: 97%;
+    height: 224px;
   }
   .img-webpage {
     height: 90% !important;
